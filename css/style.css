@@ -1,4 +1,6 @@
-
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 nav {
     background-color: #ffffff;
     box-shadow: 0 5px 10px rgba(0,0,0,0.2);
@@ -43,8 +45,6 @@ body {
     justify-content: center;
     align-items: center;
     min-height: calc(100vh - 80px); /* Full height minus approximate nav height */
-   
-    
 }
 .login_signup{
     background-color: #1E2B27;
@@ -52,7 +52,6 @@ body {
     padding: 30px;
     height:  600px;
     justify-content: flex-start;
-    align-items: flex-start;
 }
 .login_signup img{
     width: auto;
@@ -72,12 +71,10 @@ body {
     text-align: center;
 }
 .login_page{
-    height: 600px;
-    border-radius: 15px 60px 15px 15px;
-    padding: 30px;
+    margin-left :8%
 }
 .login_page h2{
-    color: white;
+    color: #1E2B27;
     text-align: center;
 }
 .login_page form{
@@ -85,13 +82,29 @@ body {
     flex-direction: column;
     gap: 15px;
     margin-top: 30px;
-   
+    font-weight: bolder;
+    color: #1E2B27;
+    font-size: large;
 }
+.orange_color{
+    color: #F57C00;
+    text-decoration: none;
+    font-size: medium;
+}
+
 .cardholder {
     display: flex;
-    justify-content: center;
     align-items: center;
     background-color: #96C7B8;
     border-radius: 15px;
     width: 1000px;
+}
+.buttons{
+    justify-content: center;
+    background-color: #1E2B27;
+      color: #96C7B8;
+    border-radius: 5px;
+    font-size: large;
+    font-weight: bold;
+    max-width: fit-content;
 }
