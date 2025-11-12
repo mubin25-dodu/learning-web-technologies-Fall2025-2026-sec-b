@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+       <title>Document</title>
 </head>
 <body>
     <form action="">
-      Name <br><input type="text" name="Name" id="">
-     <br> <button onclick="location.href='p2.html'" type="button">Submit</button>
+      Name <br><input type="text" name="Name" id="iName">
+     <br> <button type="button" id="namebtn">Submit</button>
+     <div id="vr">
+    <p>Validation Rules:</p>
+      <ul><li id="one">Cannot be empty</li>
+    <li id="two">Contains at least two words </li>
+    <li id="three">Can contain a-z or A-Z or dot(.) or dash(-)</li>
+    <li id="four">Must start with a letter </li>
+    </ul></div>
     </form>
 </body>
+<script src="js/script.js"></script>
+
 </html>
