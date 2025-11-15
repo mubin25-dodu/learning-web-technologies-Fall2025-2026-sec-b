@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<link rel="stylesheet" href="css/style.css">
 <body>
 <fieldset style="width: fit-content;">
 <legend>Gender</legend>
@@ -15,7 +16,10 @@
 <input type="radio" name="gender" id="others">
 <label for="others">Others</label>
 </fieldset>
-<br> <button onclick="location.href='p4.html'" type="button">Submit</button>
-
+<br> <button type="button" id="gbtn">Submit</button>
+ <div id="vr"><p>Validation Rules:</p>
+      <ul><li id="eh">At least one of them has to be selected </li>
+    </ul></div>
 </body>
+<script src="js/script.js"> </script>
 </html>
