@@ -87,11 +87,27 @@ else{
 }
 if(savebtn) {savebtn.addEventListener('click' , saving);}
 function saving (){
-   let naming = document.getElementById('nameinp').value;
-   if(naming ==='' || (naming.trim().split(/\s+/).filter(Boolean).length < 2))
-   { disp.add= 'username'+naming
-    document.getElementById('notif').innerText ='Fields Can not be empty';}
-    alart
+    const nameEl = document.getElementById('nameinp');
+    const notif = document.getElementById('notif');
+    let naming= nameEl.value;
+    if (!nameEl) {
+        if (notif) notif.innerText = 'No field to save';
+    }
+    if (naming === '' || naming.length < 2) {
+        disp.push('username:' + naming);
+        if (notif) notif.innerText = 'name cannot be empty and must contain at least two words';
+    
+    }
+
+    if (naming[0].NaN) {
+        if (notif) notif.innerText = 'Name must start with a letter';
+        return;
+    }
+    else{   
+    if (notif) notif.innerText = 'Saved';
+    alert(disp); 
+}
+
 
 }
 </script>
