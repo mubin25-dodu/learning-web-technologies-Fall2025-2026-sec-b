@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    Type field name <br>
+    <input type="text" id="input">
+    <button type="button" id="add">+</button>   
+    <br>
+<button type="button" id="save">Save</button>
+<p id="notif"></p>
+<br>
+    
+</body>
+<script>
+    const add = document.getElementById('add');
+    const savebtn = document.getElementById('save');
+
+
+if(add) {add.addEventListener('click' , adding);}
+
+const disp =[];
+function adding(){
+    let data = document.getElementById('input').value;
+        document.getElementById('notif').innerText = '';
+    if(data != ''){
+     if (data.includes('name')){
+        let inp = document.createElement("input");
+        inp.setAttribute("type", "text");
+        inp.setAttribute("placeholder", "enter your name");
+        document.body.appendChild(inp);
+        let linebreask = document.createElement("br");
+        document.body.appendChild(linebreask);
+        inp.id = "nameinp";
+
+    }
+    else if (data.includes('password')){
+        let inp = document.createElement("input");
+        inp.setAttribute("type", "password");
+        inp.setAttribute("placeholder", "enter your password");
+        document.body.appendChild(inp);
+        let linebreask = document.createElement("br");
+        document.body.appendChild(linebreask);
+        inp.id = "passinp";
+    }
+       else if (data.includes('date')){
+        let inp = document.createElement("input");
+        inp.setAttribute("type", "date");
+        document.body.appendChild(inp);
+        let linebreask = document.createElement("br");
+        document.body.appendChild(linebreask);
+        inp.id = "dateinp";
+
+    }
+   else if (data.includes('blood')){
+    let selectElement = document.createElement("select");
+    
+    let optionA = document.createElement("option");
+    optionA.textContent = "A+";
+
+    let optionB = document.createElement("option");
+    optionB.textContent = "B+";
+
+    let optionAB = document.createElement("option");
+    optionAB.textContent = "AB+";
+
+    let optionO = document.createElement("option");
+    optionO.textContent = "O+";
+
+    selectElement.appendChild(optionA);
+    selectElement.appendChild(optionB);
+    selectElement.appendChild(optionAB);
+    selectElement.appendChild(optionO);
+    document.body.appendChild(selectElement);
+    inp.id = "selectElementinp";
+
+}
+else{
+       document.getElementById('notif').innerText ='enter a valid Input type';
+    }
+    }
+    else{
+       document.getElementById('notif').innerText ='Can not be empty';
+    }
+    
+}
+if(savebtn) {savebtn.addEventListener('click' , saving);}
+function saving (){
+   let naming = document.getElementById('nameinp').value;
+   if(naming ==='' || (naming.trim().split(/\s+/).filter(Boolean).length < 2))
+   { disp.add= 'username'+naming
+    document.getElementById('notif').innerText ='Fields Can not be empty';}
+    alart
+
+}
+</script>
+</html>
