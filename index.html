@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+   <div id="table"> <table>
+        <tr> <td>mubin25-dodu .auth</td>
+        <td> 2r2f45</td>
+        <td> 12 commits</td>
+    </tr>
+    <tr><td id="mid">  mid</a>
+    <div id="labs"><a href="">lab-1</a><br>
+    <a href="">lab-1</a><br>
+    <a href="">lab-1</a>
+    </div></td>
+    <td>createing a structure</td>
+    <td>last week</td>
+</tr>
+<tr><td>project</td>
+<td>createing a structure</td>
+    <td>last week</td></tr>
+    </table>
+    </div>    
+</body>
+
+<!-- adding css -->
+<style>
+    body{
+        background-color: black;
+        font-size: larger;
+        color: rgb(246, 251, 255);
+
+    }
+table{
+    min-width: 500px;
+    width: fit-content;
+    background-color: rgb(2, 8, 24);
+    text-align: left;
+    padding: 1em;
+    border-radius: 5px;
+    margin: 5em auto; 
+}
+#labs{
+    margin-left:1.2em ;
+    display: none;
+
+}
+a{
+    text-decoration: none;
+    color: rgb(246, 251, 255);
+
+}
+</style>
+
+<script>
+    document.getElementById('mid').addEventListener('click',mid);
+    function mid(){
+         
+        if(document.getElementById('labs').style.display==='block'){
+            document.getElementById('labs').style.display='none';
+        }
+        else{
+            document.getElementById('labs').style.display='block'
+        }
+    }
+</script>
+</html>
