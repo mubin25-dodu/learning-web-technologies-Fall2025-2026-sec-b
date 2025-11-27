@@ -10,15 +10,18 @@
         <td> 2r2f45</td>
         <td> 12 commits</td>
     </tr>
-    <tr><td id="mid">  mid</a>
-    <div id="labs"><a href="">lab-1</a><br>
-    <a href="">lab-1</a><br>
-    <a href="">lab-1</a>
+    <tr><td id="mid"> <img src="img/folder.png" style="width: 20px; margin-bottom: -3px; margin-left: 10px;"> mid
+    <div id="labs">
+    <a href="mid/lab_1/page_1.html">lab-1</a><br>
+    <a href="mid/lab-2/p1.html">lab-2</a><br>
+    <a href="mid/lab-3/index.html">lab-3</a><br>
+    <a href="mid/labexam/index.html">lab_exam</a>
     </div></td>
     <td>createing a structure</td>
     <td>last week</td>
 </tr>
-<tr><td>project</td>
+<tr><td id="pro"> <img src="img/folder.png" style="width: 20px; margin-bottom: -3px; margin-left: 10px;"> project
+<div id="project"> <a href="project/index.html">FarmLink</a></div></td>
 <td>createing a structure</td>
     <td>last week</td></tr>
     </table>
@@ -28,7 +31,7 @@
 <!-- adding css -->
 <style>
     body{
-        background-color: black;
+        background-color: rgb(27, 26, 26);
         font-size: larger;
         color: rgb(246, 251, 255);
 
@@ -42,7 +45,7 @@ table{
     border-radius: 5px;
     margin: 5em auto; 
 }
-#labs{
+#project,#labs{
     margin-left:1.2em ;
     display: none;
 
@@ -55,14 +58,26 @@ a{
 </style>
 
 <script>
-    document.getElementById('mid').addEventListener('click',mid);
+    const a=document.getElementById('mid');
+     const b=document.getElementById('pro');
+    if(a){a.addEventListener('click',mid)}
+    if(b){b.addEventListener('click',pro)}
     function mid(){
          
-        if(document.getElementById('labs').style.display==='block'){
+        if( document.getElementById('labs').style.display==='block'){
             document.getElementById('labs').style.display='none';
         }
         else{
             document.getElementById('labs').style.display='block'
+        }
+    }
+        function pro(){
+         
+        if( document.getElementById('project').style.display==='block'){
+            document.getElementById('project').style.display='none';
+        }
+        else{
+            document.getElementById('project').style.display='block'
         }
     }
 </script>
