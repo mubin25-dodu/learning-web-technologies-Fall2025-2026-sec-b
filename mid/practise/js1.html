@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body id="mode">
+    <h1> Task-1</h1>   
+    <form action="">
+        <input type="text" name="" id="name"   placeholder="Enter your name"><br>
+        <input type="email" name="" id="email" placeholder="Enter your email"><br>
+        <input type="password" name="" id="password" placeholder="Enter your password"><br>
+        <input type="password" name="" id="cpassword" placeholder="confirm password"><br>
+        <input type="number" name="" id="number" placeholder="Enter your phone number"><br>
+        <button id="btn" type="button">Submit</button>
+        <p></p>
+    </form>
+    <button type="button" id="b">Change theme</button> 
+    <div id="colortheme"> Choose background color <input type="color" name="" id="bg" >
+    <br>choose forground color <input type="color" name="" id="fg"></div>
+    
+    
+    <style>
+        #colortheme{
+            display: none;
+        }
+    </style>
+    <script>
+        const submit1 = document.getElementById('btn');
+        if (submit1){ submit1.addEventListener('click' , check);}
+        const b1 = document.getElementById('b');
+        if (b1){ b1.addEventListener('click' , btn);}
+        const bg = document.getElementById('bg');
+        if (bg){ bg.addEventListener('input', colors); }
+         const fg = document.getElementById('fg');
+        if (fg){ fg.addEventListener('input', colors); }
+
+        function colors(){
+            const val = document.getElementById('bg').value;
+            document.getElementById('mode').style.backgroundColor = val;
+            document.getElementById('name').style.backgroundColor =val;
+            const val2 = document.getElementById('fg').value;
+            document.getElementById('mode').style.color = val2;
+        }
+
+        function btn(){
+            let q = document.getElementById('colortheme');
+            if(q.style.display=== 'block'){
+                q.style.display= 'none'
+            }
+            else{ 
+                q.style.display= 'block'
+            }
+        }
+
+        function check(){     
+  
+        const name = document.getElementById('name').value;
+        const pass = document.getElementById('password').value;
+        const cpass = document.getElementById('cpassword').value;
+        const num = document.getElementById('number').value;
+        const email = document.getElementById('email').value;
+        const notif = document.querySelector('p'); 
+            notif.innerText='';
+        if( name ===''||pass===''||cpass===''||email ==='' || num===''){
+            let txt = document.createTextNode("fields can not be");
+            notif.appendChild(txt); 
+            notif.appendChild(document.createElement('br'))
+            notif.style.color='red';
+           }
+        else if( name.length > 3){ 
+            if( !email.includes('@') ||            
+                    email.split('@').length !== 2 ||    
+                    !email.includes('.') ||            
+                    email.startsWith('@') ||          
+                    email.endsWith('.') ) { 
+            let txt = document.createTextNode('enter a valid email');
+            notif.appendChild(txt); 
+            notif.appendChild(document.createElement('br'))
+            notif.style.color='red';
+                }
+                if( pass !=cpass ){
+                    let txt = document.createTextNode('pass doesnot match');
+                    notif.appendChild(txt); 
+                    notif.appendChild(document.createElement('br'))
+                    notif.style.color='red';
+                }
+                if(!(/^(\+8801[3-9][0-9]{8}|01[3-9][0-9]{8})$/.test(num))){
+                    let txt = document.createTextNode('enter a valid phone number');
+                    notif.appendChild(txt); 
+                    notif.appendChild(document.createElement('br'))
+                    notif.style.color='red';
+                }
+                
+        }else if (name.length < 3) {
+            let txt = document.createTextNode('enter valid data');
+            notif.appendChild(txt); 
+            notif.appendChild(document.createElement('br'))
+            notif.style.color='red';
+          }
+          else
+          {
+            let txt = document.createTextNode('submited');
+            notif.appendChild(txt); 
+            notif.appendChild(document.createElement('br'))
+            notif.style.color='green';
+            let details = "Name:"+name;
+            let di = document.createElement('div');
+            di.appendChild(details);
+          }
+    }       
+
+  
+</script>
+</body>
+</html>
+
