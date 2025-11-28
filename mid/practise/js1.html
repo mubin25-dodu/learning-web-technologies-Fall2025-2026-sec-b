@@ -90,25 +90,21 @@
                     notif.appendChild(txt); 
                     notif.appendChild(document.createElement('br'))
                     notif.style.color='red';
-                }
-                
-        }else if (name.length < 3) {
-            let txt = document.createTextNode('enter valid data');
-            notif.appendChild(txt); 
-            notif.appendChild(document.createElement('br'))
-            notif.style.color='red';
-          }
-          else
+                }else
           {
-            let txt = document.createTextNode('submited');
+            let txt = document.createTextNode('submitted');
             notif.appendChild(txt); 
-            notif.appendChild(document.createElement('br'))
-            notif.style.color='green';
-            let details = "Name:"+name;
-            let di = document.createElement('div');
-            di.appendChild(details);
-          }
-    }       
+            notif.appendChild(document.createElement('br'));
+            notif.style.color = 'green';
+
+                const details = 'Name: ' + name;
+                const di = document.createElement('div');
+                di.textContent = details;
+                document.body.appendChild(di);
+            }
+        }
+          
+        }       
 
   
 </script>
