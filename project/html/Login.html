@@ -1,41 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Page Title</title>
-<link rel="stylesheet" type="text/css" href="../css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmLink_LOGIN</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-<body style="color: black;">
-<nav >
+<body>
+    <nav >
     <img class="logo" src="../img/farmlink_logo.jpg" >
     <ul>
-        <li><a class="nav-link" href="../index.html">Home</a></li>
+        <li><a class="nav-link" href="#Home">Home</a></li>
         <li><a class="nav-link" href="#Basket">Basket</a></li>
         <li><a class="nav-link" href="#Orders">Orders</a></li>
         <li><a class="nav-link" href="#about_us">About Us</a></li>
+        <li><a class="orange_color" href="html/Login.html">Get Started</a></li>
     </ul>
 </nav> 
-
-<div class="logincard">
-    <div class="cardholder"> 
-    <div class="login_signup">
-        <img src="../img/Grow. Link. Thrive..png" alt="">
-        <p>Dont have an account? </p>
-        <a href="signup.html">Sign up</a>
-    </div>
-    <div class="login_page">
-        <h2>Enter your credentials</h2>
+<div id="con"> <div id="reg_log"> 
+    <div id="signup"> 
         <form action="">
-            <label for="UID">Enter your email:</label>
-            <input type="email"  id="UID">
-            <label for="password">Enter your password:</label>
-            <input type="password" id="password">
-            <a href="#forgot-password" class="orange_color">Forgot your password?</a>
-            <button class="buttons" type="submit">Login</button>
-        </form> 
+            <h3>Enter your details</h3>
+            Full name: <br><input type="text" class="inputreg"><br>
+            Phone number: <br><input type="number"class="inputreg"><br>
+            Email: <br><input type="email"class="inputreg"><br>
+            Enter password: <br><input type="password"class="inputreg"><br>
+            Confirm password: <br><input type="password"class="inputreg"><br>
+            Role: <select name="" id="">
+                <option value="">Buyer</option>
+                <option value="">Seller</option>
+                <option value="">Agent</option>
+            </select>
+            <br> 
+            Full address: <br><input type="text"class="inputreg"><br>
+            City:<select name="" id="">
+                <option value="">Buyer</option>
+                <option value="">Seller</option>
+                <option value="">Agent</option>
+            </select>
+            <button type="button" id="sibtn" class="btn1" > Sign up</button>
+        </form>
     </div>
+        <div id="login"> 
+        <form action="">
+            <h3>Enter credentials</h3>
+            Email or Phone: <br><input type="text" class="inputreg"><br>
+            Password: <br><input type="text" class="inputreg"><br>
+            <button class="btn1"> Login</button>
+        </form>
     </div>
-    
+    <div id="slider"> 
+    <img style="width: 300px;" src="../img/Grow. Link. Thrive..png" alt="">
+    <p id="reg_P">Don't Have an account!!</p>
+    <button id="signupbtn">Signup</button>
 </div>
-
+    </div> </div>
+<script src="../js/script.js"></script>
 </body>
 </html>
