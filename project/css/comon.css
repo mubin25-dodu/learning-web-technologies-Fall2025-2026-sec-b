@@ -53,7 +53,7 @@ body {
     position: fixed;
     top: 80px;
     right: -150px;
-    background-color: #afe9d7;
+    /* background-color: #afe9d7; */
     color: #1E2B27;
     padding: 15px 25px;
     border-radius: 5px;
