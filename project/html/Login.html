@@ -4,43 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FarmLink_LOGIN</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/comon.css">
 </head>
 <body>
     <nav >
     <img class="logo" src="../img/farmlink_logo.jpg" >
     <ul>
-        <li><a class="nav-link" href="#Home">Home</a></li>
+        <li><a class="nav-link" href="../index.html">Home</a></li>
         <li><a class="nav-link" href="#Basket">Basket</a></li>
         <li><a class="nav-link" href="#Orders">Orders</a></li>
         <li><a class="nav-link" href="#about_us">About Us</a></li>
-        <li><a class="orange_color" href="html/Login.html">Get Started</a></li>
     </ul>
 </nav> 
+<div id="notif"></div>
 <div id="con"> <div id="reg_log"> 
     <div id="signup"> 
         <form action="">
+            <!-- signup form-->
             <h3>Enter your details</h3>
-            Full name: <br><input type="text" class="inputreg"><br>
-            Phone number: <br><input type="number"class="inputreg"><br>
-            Email: <br><input type="email"class="inputreg"><br>
-            Enter password: <br><input type="password"class="inputreg"><br>
-            Confirm password: <br><input type="password"class="inputreg"><br>
-            Role: <select name="" id="">
-                <option value="">Buyer</option>
-                <option value="">Seller</option>
-                <option value="">Agent</option>
+            Full name: <br><input type="text" class="inputreg" id="name"><br>
+            Phone number: <br><input type="number"class="inputreg" id="number"><br>
+            Email: <br><input type="email"class="inputreg" id="email"><br>
+            Enter password: <br><input type="password"class="inputreg" id="pass"><br>
+            Confirm password: <br><input type="password"class="inputreg"id="cpass"><br>
+            Role: <select name="" id="role">
+                <option value="">Select a role</option>
+                <option value="Buyer">Buyer</option>
+                <option value="Seller">Seller</option>
+                <option value="Agent">Agent</option>
             </select>
             <br> 
-            Full address: <br><input type="text"class="inputreg"><br>
-            City:<select name="" id="">
-                <option value="">Buyer</option>
-                <option value="">Seller</option>
-                <option value="">Agent</option>
+            Full address: <br><input type="text"class="inputreg" id="address"><br>
+            City: <select name="" id="city">
+                <option value="">Select a city</option>
+                <option value="Buyer">Buyer</option>
+                <option value="Seller">Seller</option>
+                <option value="Agent">Agent</option>
             </select>
-            <button type="button" id="sibtn" class="btn1" > Sign up</button>
+            <br><button type="button" id="sibtn" class="btn1" > Sign up</button>
         </form>
     </div>
+            <!-- login form-->
         <div id="login"> 
         <form action="">
             <h3>Enter credentials</h3>
@@ -49,12 +54,14 @@
             <button class="btn1"> Login</button>
         </form>
     </div>
+            <!-- slider-->
+
     <div id="slider"> 
     <img style="width: 300px;" src="../img/Grow. Link. Thrive..png" alt="">
     <p id="reg_P">Don't Have an account!!</p>
     <button id="signupbtn">Signup</button>
 </div>
     </div> </div>
-<script src="../js/script.js"></script>
+<script src="../js/login.js"></script>
 </body>
 </html>

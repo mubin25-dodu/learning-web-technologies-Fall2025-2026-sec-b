@@ -1,45 +1,3 @@
-* {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-nav {
-    background-color: #ffffff;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 30px;
-}
-.logo {
-    width: 210px;   
-    height: auto;
-}
-nav img {
-    margin-bottom: 5px;
-}
-nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 10px;
-}
-nav ul li {
-    display: inline;
-}
-nav ul li a{
-    text-decoration: none;
-    margin-left: 20px;
-    color: #025027;
-    font-weight: bold;
-    font-size: 22px;
-}
-nav ul li a:hover {
-    color: #ccc900;
-}
-body {
-    margin: 0;
-    padding: 0;
-}
 #con{
     display: flex;
     justify-content: center;
@@ -47,11 +5,16 @@ body {
     /* background-color: #ccc900; */
     height: calc(100vh - 79px);
     width: 100vw;
+    
 }
 #reg_log{
     display: flex;
     background-color: #D0E3D5;
     border-radius: 15px;
+    position: relative;
+    overflow: hidden; 
+    box-shadow:  5px 5px 10px rgba(30, 43, 39, 0.397);
+    transition: all 1.5s ease;
 }
 #signup{
     padding: 70px 100px;
@@ -78,13 +41,14 @@ cursor:pointer;
 }
 #slider{
     position: absolute;
-    padding: 65.5px 50px;
+    padding: 65px 50px; 
     text-align: center;
     background-color: #1E2B27;
     color: #ffffff; 
-    transition: all  1.5s ease;
+    transition: all 1.5s ease;
     border-radius: 10px 100px 0px 10px;
-    /* transform: translateX(100px); */
+    height: 100%;
+    box-sizing: border-box;
 }
 .btn1{
     background-color: transparent;
@@ -94,4 +58,9 @@ cursor:pointer;
     cursor: pointer;
     margin-left: -4px;
     
+}
+
+.inputreg{
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
