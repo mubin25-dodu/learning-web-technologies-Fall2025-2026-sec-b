@@ -18,6 +18,7 @@ body {
 }
 #btn_getstarted {
     position: relative;
+    text-decoration: none;
     background-color: #D0E3D5;
     border: 2px solid #1E2B27;
     color: #1E2B27;
