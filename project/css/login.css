@@ -40,6 +40,7 @@ font-weight: bold;
 cursor:pointer;
 }
 #slider{
+    /* display: none; */
     position: absolute;
     padding: 65px 50px; 
     text-align: center;
@@ -48,6 +49,7 @@ cursor:pointer;
     transition: all 1.5s ease;
     border-radius: 10px 100px 0px 10px;
     height: 100%;
+    width: 50%;
     box-sizing: border-box;
 }
 .btn1{
@@ -61,6 +63,12 @@ cursor:pointer;
 }
 
 .inputreg{
-    border: 1px solid #ccc;
+    /* border: 1px solid #D0E3D5; */
+    /* display: none; */
+    border: none;
     border-radius: 5px;
+}
+#otp{
+    display: none;
+    padding: 10px;
 }

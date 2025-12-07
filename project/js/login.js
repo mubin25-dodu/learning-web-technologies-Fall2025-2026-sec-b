@@ -1,14 +1,18 @@
 let slider_btn = document.getElementById('signupbtn');
 let regbtn = document.getElementById('sibtn');
+let otpbtn = document.getElementById('otpbtn');
+let otp_num;
 
 if(regbtn){ regbtn.addEventListener('click',regestration)}
 if(slider_btn){slider_btn.addEventListener('click',slider)}
+if(otpbtn){
+    otpbtn.addEventListener('click',otp)}
 
 function slider(){
 
     if(slider_btn.innerHTML=='Signup'){
     let sl = document.getElementById('slider');
-    sl.style.transform='translateX(315px)';
+    sl.style.transform='translateX(100%)';
     slider_btn.innerHTML='Login'
     document.getElementById('reg_P').innerHTML='Already have an account!!';
     sl.style.borderRadius='100px 10px 10px 10px';
@@ -61,10 +65,9 @@ function regestration(){
             }
         }
         else if(arr[i]=='pass'){
-            let passPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
-            if(!passPattern.test(id.value)){
+            if(id.value.length < 8){
                 id.style.border='2px solid red';
-                notifyUser('Password must be 8+ characters with uppercase, lowercase, number and special character','red');
+                notifyUser('Password must be at least 8 characters long','red');
                 valid=false;
             }
         }
@@ -87,16 +90,48 @@ function regestration(){
              
     }
       if(valid){
-            notifyUser('Registration successful!','green');
+        let inputs = document.getElementsByClassName('inputreg');
+        for(let i=0; i<inputs.length; i++){
+            inputs[i].style.display = 'none';
+        }
+            document.getElementById('otp').style.display='block';
+            document.getElementById('sibtn').style.display='none';
+            // sending otp
+              otp_num= Math.floor(100000 + Math.random() * 900000);
+                let params = {
+                        email: document.getElementById('email').value,
+                        passcode: "Your OTP is " + otp_num
+                    };
+                    console.log(params);
+                    console.log("Sending email...");
+                    console.log(otp_num);
+                    emailjs.send("service_1u2e3a9","template_r96wljl",params);
+            notifyUser('OTP sent to your email/phone. Please verify.','green');
+
+        }      
+        
+}
+
+function otp(){
+   
+    let otp_input = document.getElementById('otp_input').value;
+    if(otp_input.trim()===''){
+        notifyUser('Please enter the OTP','red');
+    }
+    else if(otp_input == otp_num){
+        notifyUser('Invalid OTP. Please try again.','red');
+         notifyUser('Registration successful!','green');
             let sl = document.getElementById('slider');
             sl.style.transform='translateX(0px)';
             slider_btn.innerHTML='Signup'
             document.getElementById('reg_P').innerHTML="Don't Have an account!!";
             sl.style.borderRadius='10px 100px 0px 10px';
             document.getElementById('reg_log').style.boxShadow=' 5px 5px 10px rgba(30, 43, 39, 0.397)';
-        }      
-        
-
+    }
+    else{
+        notifyUser('Invalid OTP. Please try again.','red');
+    }
+    
 }
 
     function notifyUser(message,color){   
