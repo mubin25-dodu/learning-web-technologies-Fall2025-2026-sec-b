@@ -119,7 +119,6 @@ function otp(){
         notifyUser('Please enter the OTP','red');
     }
     else if(otp_input == otp_num){
-        notifyUser('Invalid OTP. Please try again.','red');
          notifyUser('Registration successful!','green');
             let sl = document.getElementById('slider');
             sl.style.transform='translateX(0px)';
