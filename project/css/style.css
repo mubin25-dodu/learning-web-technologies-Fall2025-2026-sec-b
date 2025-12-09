@@ -4,8 +4,9 @@
     box-sizing: border-box;
 }
 #ad{
-    display: inline-block;
-    background-color: rgb(108, 214, 174);
+    display: flex;
+    background-color: rgba(203, 209, 207, 0.096);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     min-width: 750px;
     min-height: 350px;
     margin-left: 50%;

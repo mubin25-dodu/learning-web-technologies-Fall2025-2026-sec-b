@@ -49,42 +49,104 @@ function regestration(){
             valid=false;
         }
         else if(arr[i]=='name'){
-            let namePattern = /^[a-zA-Z\s]{2,50}$/;
-            if(!namePattern.test(id.value)){
-                id.style.border='2px solid red';
-                notifyUser('Please enter a valid name (2-50 characters, letters only)','red');
-                 valid=false;
+            let name = id.value.trim();
+            let isValid = true;
+            
+            if(name.length < 2 || name.length > 50){
+            isValid = false;
+            }
+            
+            for(let j = 0; j < name.length; j++){
+            let char = name[j];
+            if(!((char >= 'a' && char <= 'z') || (char >= 'A' && char <= 'Z') || char === ' ')){
+                isValid = false;
+                break;
+            }
+            }
+            
+            if(!isValid){
+            id.style.border='2px solid red';
+            notifyUser('Please enter a valid name (2-50 characters, letters only)','red');
+            valid=false;
             }
         }
         else if(arr[i]=='email'){
-            let emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if(!emailPattern.test(id.value)){
-                id.style.border='2px solid red';
-                notifyUser('Please enter a valid email address','red');
+            let email = id.value.trim();
+            let hasAt = false;
+            let hasDot = false;
+            let atIndex = -1;
+            let dotIndex = -1;
+            
+            for(let j = 0; j < email.length; j++){
+            if(email[j] === '@'){
+                hasAt = true;
+                atIndex = j;
+            }
+            if(email[j] === '.' && j > atIndex){
+                hasDot = true;
+                dotIndex = j;
+            }
+            }
+            
+            if(!hasAt || !hasDot || atIndex === 0 || dotIndex === email.length - 1 || dotIndex - atIndex < 2){
+            id.style.border='2px solid red';
+            notifyUser('Please enter a valid email address','red');
             valid=false;
             }
         }
         else if(arr[i]=='pass'){
             if(id.value.length < 8){
-                id.style.border='2px solid red';
-                notifyUser('Password must be at least 8 characters long','red');
-                valid=false;
+            id.style.border='2px solid red';
+            notifyUser('Password must be at least 8 characters long','red');
+            valid=false;
             }
         }
         else if(arr[i]=='cpass'){
             let pass = document.getElementById('pass').value;
             if(id.value!==pass){
-                id.style.border='2px solid red';
-                notifyUser('Password and Confirm Password do not match','red');
-                valid=false;
+            id.style.border='2px solid red';
+            notifyUser('Password and Confirm Password do not match','red');
+            valid=false;
             }
         }
         else if(arr[i]=='number'){
-            let numberPattern = /^(?:\+?88)?01[3-9]\d{8}$/;
-            if(!numberPattern.test(id.value)){
+            let phone = id.value.trim();
+            let startIndex = 0;
+            
+            // Check for +88 prefix
+            if(phone.length > 2 && phone[0] === '+' && phone[1] === '8' && phone[2] === '8'){
+            startIndex = 3;
+            }
+            // Check for 88 prefix
+            else if(phone.length > 1 && phone[0] === '8' && phone[1] === '8'){
+            startIndex = 2;
+            }
+            
+            // Check if starts with 01
+            if(phone.length - startIndex !== 11 || phone[startIndex] !== '0' || phone[startIndex + 1] !== '1'){
+            id.style.border='2px solid red';
+            notifyUser('Please enter a valid phone number','red');
+            valid=false;
+            }
+            else{
+            // Check third digit (must be 3-9)
+            let thirdDigit = phone[startIndex + 2];
+            if(thirdDigit < '3' || thirdDigit > '9'){
                 id.style.border='2px solid red';
                 notifyUser('Please enter a valid phone number','red');
                 valid=false;
+            }
+            else{
+                // Check remaining 8 digits are numbers
+                for(let j = startIndex; j < phone.length; j++){
+                if(phone[j] < '0' || phone[j] > '9'){
+                    id.style.border='2px solid red';
+                    notifyUser('Please enter a valid phone number','red');
+                    valid=false;
+                    
+                }
+                }
+            }
             }
         }
              
