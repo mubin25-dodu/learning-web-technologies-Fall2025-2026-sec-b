@@ -3,22 +3,34 @@
     padding: 0;
     box-sizing: border-box;
 }
+:root{
+ --darkgreen: #1E2B27;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 1;
+    padding: 0;
+}
 #ad{
     display: flex;
     background-color: rgba(203, 209, 207, 0.096);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    min-width: 750px;
-    min-height: 350px;
+    box-shadow:  0 1px 8px rgba(0, 0, 0, 0.925);
+    width: 750px;
+    height: 350px;
     margin-left: 50%;
-    border-radius: 10px;
+    border-radius: 20px 20px;
     transform: translateX(-50%);
     margin-top: 50px;
     overflow: hidden;
+    perspective: 1000px;
 }
 #ad_banner{
     /* background-color: rgb(182, 194, 189); */
     position: relative;
     /* left: 100%; */
+    display: flex;
     width: 750px;
     height: 350px;
     background-size: contain;
@@ -36,6 +48,7 @@
     padding: 10px;
     cursor: pointer;
     border-radius: 50%;
+    z-index: 11;
 }
 #right_btn{
     position: absolute;
@@ -48,4 +61,21 @@
     cursor: pointer;
     border-radius: 50%;
     left: 95%;
+    z-index: 11;
+}
+#searchbar{
+  position: relative;
+  left: 10px;
+  border-radius: 30px;
+  border-color: #D0E3D5 ;
+  outline: none;
+  font-size: 16px;
+  padding: 5px 1px 5px 15px;
+  width: 100px;
+  transition: all 0.3s ease;
+}
+
+#searchbar:focus{
+  width: 200px;
+  box-shadow: 0 0 8px #1E2B27;
 }

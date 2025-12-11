@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+    <link rel="stylesheet" href="../../css/comon.css">
+    <link rel="stylesheet" href="../../css/buyer/home.css">
+
+</head>
+<body style="color: black;">
+<nav >
+    <img class="logo" src="../../img/farmlink_logo.jpg" >
+    <div id="navbtn"> 
+    <ul>
+        <li><a class="nav-link" href="#Home">Home</a></li>
+        <li><a class="nav-link" href="#Basket">Basket</a></li>
+        <li><a class="nav-link" href="#Orders">Orders</a></li>
+        <li><a class="nav-link" href="../about.html">About Us</a></li>
+    </ul>
+    <input type="text" placeholder="Search..." id="searchbar" >
+     <a class="orange_color" href="../Login.html">Get Started</a>
+    </div>
+</nav>
+ <!-- ad  section-->
+<div  id="ad">
+    <div id="ad_banner"> </div>
+    <button type="button" id="left_btn"><</button>
+    <button type="button" id="right_btn">></button>
+</div>
+<!-- products section-->
+<div class="sections">
+    <h2 class="sec_title">Most selled products</h2>
+    <div id="products_container">
+        
+       <div id="products" class ="products"> 
+        <div class="p_details"><img src="../../img/Grow. Link. Thrive..png" style="width: 200px ;" alt="Product 1">
+        <h3>Product 1</h3>
+        <p> Price $10.00</p>
+        <div id="counter_btn"> <button type="button" class="counter_btns" id="increment_btn">+</button> <span id="value"> 0 </span><button type="button"  class="counter_btns" id="decrement_btn">-</button></div>
+        <button class="card_btn" id="buy_btn">Buy</button> 
+        <button class="card_btn" id="basket"> Basket</button> 
+        </div>
+        </div> 
+       </div>
+    </div>
+<script src="../../js/home.js"></script>
+</body>
+</html>

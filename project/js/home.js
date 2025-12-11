@@ -1,44 +1,107 @@
-// setInterval(bannerChange, 3000);
-let lft_btn= document.getElementById('left_btn');
-let rgt_btn= document.getElementById('right_btn');
+setInterval(() => bannerChange("left"), 10000);
+let lft_btn = document.getElementById('left_btn');
+let rgt_btn = document.getElementById('right_btn');
+
+var banners = [
+    'url("../../img/ad2.png")',
+    'url("../../img/ad1.png")',
+    'url("../../img/ad2.png")',
+    'url("../../img/ad1.png")',
+];
+
+for(let i = 0; i < banners.length; i++){
+    let banner = document.getElementById('ad_banner');
+    let currentBanner = document.createElement('div');
+    currentBanner.style.backgroundImage = banners[i];
+    currentBanner.style.width = '100%';
+    currentBanner.style.height = '100%';
+    currentBanner.style.backgroundSize = 'cover';
+    currentBanner.style.backgroundRepeat = 'no-repeat';
+    currentBanner.style.backgroundPosition = 'center';
+    currentBanner.style.position = 'absolute';
+    currentBanner.style.transition = 'transform 0.5s ease-in-out';
+    currentBanner.style.transform = 'translateX(0)';
+    currentBanner.id = 'ad' + i;
+    banner.appendChild(currentBanner);
+    console.log('Created:', currentBanner.id);
+}
+
+var currentIndex = 0;
+
 if(lft_btn){
-    lft_btn.addEventListener('click',() => bannerChange("left") )
-    }
+    lft_btn.addEventListener('click', () => bannerChange("left"));
+}
 if(rgt_btn){
-    rgt_btn.addEventListener('click', () => bannerChange("right") )
-    }
+    rgt_btn.addEventListener('click', () => bannerChange("right"));
+}
 
 function bannerChange(direction) {
-    var banners = [
-    'url("img/farmlink_logo.jpg")',
-    'url("img/farmlink_logo.jpg")',
-    'url("img/farmlink_logo.jpg")',
-    'url("img/farmlink_logo.jpg")',
-    ];
-    var currentIndex = 0;
-    if (currentIndex >= banners.length) {
-    currentIndex = 0;
-    }
-     if(currentIndex <= 0){
-        currentIndex = banners.length - 1;
-    }
 
-    if(direction==="left"){
-        currentIndex++;
-        console.log("Left button clicked");
+    
+    let currentAd = document.getElementById('ad' + currentIndex);
+    
+    if(direction === "left"){
+        console.log("Current:", currentIndex);
+        
+        // Slide current out
+        currentAd.style.transform = 'translateX(-100%)';
+        currentAd.style.zIndex = '2';
+        
+        // Calculate next
+        let nextIndex = (currentIndex + 1) % banners.length;
+        let nextAd = document.getElementById('ad' + nextIndex);
+        
+        // Position next off-screen right
+        nextAd.style.transition = 'none';
+        nextAd.style.transform = 'translateX(100%)';
+        nextAd.style.zIndex = '3';
+        
+        // Slide next in
+        setTimeout(() => {
+            nextAd.style.transition = 'transform 0.5s ease-in-out';
+            nextAd.style.transform = 'translateX(0)';
+        }, 50);
+        
+        currentIndex = nextIndex;
     }
-    if(direction==="right"){
-        currentIndex--;
-        console.log("Right button clicked");
+    else if(direction === "right"){
+        console.log("Current:", currentIndex);
+        
+        // Slide current out
+        currentAd.style.transform = 'translateX(100%)';
+        currentAd.style.zIndex = '2';
+        
+        // Calculate previous
+        let prevIndex = (currentIndex - 1 + banners.length) % banners.length;
+        let prevAd = document.getElementById('ad' + prevIndex);
+        
+        // Position previous off-screen left
+        prevAd.style.transition = 'none';
+        prevAd.style.transform = 'translateX(-100%)';
+        prevAd.style.zIndex = '3';
+        
+        // Slide previous in
+        setTimeout(() => {
+            prevAd.style.transition = 'transform 0.5s ease-in-out';
+            prevAd.style.transform = 'translateX(0)';
+        }, 50);
+        
+        currentIndex = prevIndex;
+    }
+    
+}
 
-    }
-    else{
-        currentIndex--;
-    }
-    let banner= document.getElementById('ad_banner');
-    banner.style.backgroundImage = banners[currentIndex];
-    banner.style.transform = "translateX(100%)";
+document.getElementById('ad0').style.zIndex = '3';
 
-    console.log("Banner changed to index: " + currentIndex);
+// products display 
+
+for(let i = 1; i <= 8; i++){
+    let temp = document.getElementById('products');
+    let container = document.getElementById('products_container');
+
+    let product_card = temp.cloneNode(true);
+    product_card.id = 'product_' + i;
+    product_card.style.display = 'inline-flex';
+    container.appendChild(product_card);
     
 }
