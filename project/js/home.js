@@ -95,9 +95,21 @@ document.getElementById('ad0').style.zIndex = '3';
 
 // products display 
 
-for(let i = 1; i <= 8; i++){
+for(let i = 1; i < 4; i++){
     let temp = document.getElementById('products');
     let container = document.getElementById('products_container');
+
+    let product_card = temp.cloneNode(true);
+    product_card.id = 'product_' + i;
+    product_card.style.display = 'inline-flex';
+    container.appendChild(product_card);
+    
+}
+
+
+for(let i = 1; i < 50; i++){
+    let temp = document.getElementById('products2');
+    let container = document.getElementById('products_container2');
 
     let product_card = temp.cloneNode(true);
     product_card.id = 'product_' + i;
