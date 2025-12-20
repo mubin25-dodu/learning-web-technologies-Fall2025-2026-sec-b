@@ -63,19 +63,4 @@ body {
     left: 95%;
     z-index: 11;
 }
-#searchbar{
-  position: relative;
-  left: 10px;
-  border-radius: 30px;
-  border-color: #D0E3D5 ;
-  outline: none;
-  font-size: 16px;
-  padding: 5px 1px 5px 15px;
-  width: 100px;
-  transition: all 0.3s ease;
-}
 
-#searchbar:focus{
-  width: 200px;
-  box-shadow: 0 0 8px #1E2B27;
-}

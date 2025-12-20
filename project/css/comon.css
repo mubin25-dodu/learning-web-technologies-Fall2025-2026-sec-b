@@ -15,7 +15,22 @@ h2, h3, h4, h5, h6 {
     padding: 0;
     color: var(--darkgreen);
 }
+#searchbar{
+  position: relative;
+  left: 10px;
+  border-radius: 30px;
+  border-color: #D0E3D5 ;
+  outline: none;
+  font-size: 16px;
+  padding: 5px 1px 5px 15px;
+  width: 100px;
+  transition: all 0.3s ease;
+}
 
+#searchbar:focus{
+  width: 200px;
+  box-shadow: 0 0 8px #1E2B27;
+}
 #notif{
     position: fixed;
     top: 80px;
@@ -231,20 +246,22 @@ nav ul li {
 nav ul li a{
     text-decoration: none;
     margin-left: 20px;
-    color: #025027;
+    color: var(--darkgreen);
     font-weight: bold;
     font-size: 22px;
 }
 nav ul li a:hover {
-    color: #ccc900;
+    color: var(--orange);
 }
 .orange_color{
-    color: orange;
+    color: var(--orange);
     font-size: 13px;
     margin-bottom: -10px;
+    text-decoration: none;
 }
 .orange_color:hover{
-    transform: scale(0.5);
+    transform: scale(1.1);
+    transition: all 0.3s ease;
 }
 #basket_icon{
     width: 70px;
