@@ -76,3 +76,17 @@ justify-content: space-evenly;}
     width: 100%;
     margin-top: 20px;
 }
+.checkoutbtn{
+    position: relative;
+    margin-top: 20px;
+    left: 100%;
+    transform: translate(-100%);
+    background-color: var(--darkgreen);
+    color: #ffffff;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    box-shadow: #E57400 0px 0px 5px ;
+}
